@@ -1,0 +1,204 @@
+<html>
+<head>
+  <title>App Playground</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+
+<style type="text/css">
+::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dialog {
+  background-color: white;
+  border: 1px solid black;
+  padding: 16px;
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  height: 100dvh;
+  width: 100dvw;
+  top: 0;
+  left: 0;
+}
+
+marquee {
+  color: red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container > * {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+.top div {
+  flex-grow: 1;
+}
+
+form {
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 0.5em;
+  overflow: auto;
+}
+
+input {
+  display: block;
+  height: 32px;
+}
+</style>
+
+<body>
+
+  <h1>Welcome to my website</h1>
+
+  <p></p>
+  <marquee>Hello world!!!</marquee>
+  <p></p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Windows_3.0_workspace.png?20250712000743" />
+
+  <p>Thou shalt not put musicians and
+recording artists on ridiculous pedestals
+no matter how great they are or were.</p>
+
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>The beatles</td><td>Were just a band.</td></tr>
+      <tr><td>Led Zeppelin</td><td>Just a band.</td></tr>
+      <tr><td>The Beach Boys</td><td>Just a band.</td></tr>
+      <tr><td>The Sex Pistols</td><td>Just a band.</td></tr>
+      <tr><td>The Clash</td><td>Just a band.</td></tr>
+      <tr><td>Crass</td><td>Just a band.</td></tr>
+      <tr><td>Minor Threat</td><td>Just a band.</td></tr>
+      <tr><td>The Cure</td><td>Were just a band.</td></tr>
+      <tr><td>The Smiths</td><td>Just a band.</td></tr>
+      <tr><td>Nirvana</td><td>Just a band.</td></tr>
+      <tr><td>The Pixies</td><td>Just a band.</td></tr>
+      <tr><td>Oasis</td><td>Just a band.</td></tr>
+      <tr><td>Radiohead</td><td>Just a band.</td></tr>
+      <tr><td>Bloc Party</td><td>Just a band.</td></tr>
+      <tr><td>The Arctic Monkeys</td><td>Just a band.</td></tr>
+      <tr><td>The Next Big Thing</td><td>JUST A BAND.</td></tr>
+    </tbody>
+  </table>
+
+  <p></p>
+
+  <ul>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+    <li>Thou shalt not make repetitive generic music</li>
+  </ul>
+
+  <ul>
+    <li>Thou shalt not quote me happy.</li>
+    <li>Thou shalt not shake it like a polaroid picture.</li>
+    <li>Thou shalt not wish your girlfriend was a freak like me.</li>
+    <li>Thou shalt spell the word "Pheonix" P-H-E-O-N-I-X
+not P-H-O-E-N-I-X, regardless of what the Oxford English Dictionary tells you.</li>
+    <li>Thou shalt not express your shock at the fact that
+Sharon got off with Brad at a club last night by saying "Is it".</li>
+    <li>Thou shalt think for yourselves.</li>
+  </ul>
+
+  <div class="dialog">
+    <div class="container">
+      <div class="top">
+        <div>Cool form</div>
+        <button>Close</button>
+      </div>
+
+      <form>
+        <input placeholder="one"/>
+        <input placeholder="two"/>
+        <input placeholder="three"/>
+        <input placeholder="four"/>
+        <input placeholder="five"/>
+        <input placeholder="six"/>
+        <input placeholder="seven"/>
+        <input placeholder="eight"/>
+        <input placeholder="nine"/>
+        <input placeholder="ten"/>
+        <input placeholder="one"/>
+        <input placeholder="two"/>
+        <input placeholder="three"/>
+        <input placeholder="four"/>
+        <input placeholder="five"/>
+        <input placeholder="six"/>
+        <input placeholder="seven"/>
+        <input placeholder="eight"/>
+        <input placeholder="nine"/>
+        <input placeholder="ten"/>
+        <input placeholder="one"/>
+        <input placeholder="two"/>
+        <input placeholder="three"/>
+        <input placeholder="four"/>
+        <input placeholder="five"/>
+        <input placeholder="six"/>
+        <input placeholder="seven"/>
+        <input placeholder="eight"/>
+        <input placeholder="nine"/>
+        <input placeholder="ten"/>
+      </form>
+
+      <div class="bottom">
+        Gordo woz ere
+    </div>
+    </div>
+  </div>
+
+  <button>Click here</button>
+
+
+
+<script type="text/javascript">
+  const dialog = document.querySelector('.dialog');
+  const openButton = document.querySelector('.dialog + button');
+  const closeButton = document.querySelector('.dialog button')
+
+  openButton.addEventListener('click', () => {
+    dialog.style.display = 'block'
+  })
+
+  closeButton.addEventListener('click', () => {
+    dialog.style.display = 'none'
+  })
+</script>
+</body>
+</html>
