@@ -201,7 +201,9 @@ Sharon got off with Brad at a club last night by saying "Is it".</li>
   function updateDialogHeight() {
     if (window.visualViewport) {
       const height = window.visualViewport.height;
+      const offsetTop = window.visualViewport.offsetTop;
       dialog.style.height = `${height}px`;
+      dialog.style.top = `${offsetTop}px`;
     }
   }
 
@@ -217,6 +219,7 @@ Sharon got off with Brad at a club last night by saying "Is it".</li>
   // Listen for visual viewport changes (keyboard show/hide)
   if (window.visualViewport) {
     window.visualViewport.addEventListener('resize', updateDialogHeight);
+    window.visualViewport.addEventListener('scroll', updateDialogHeight);
   }
 </script>
 </body>
