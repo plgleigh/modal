@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>App Playground</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1,interactive-widget=resizes-visual" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 </head>
 
 <style type="text/css">
@@ -197,13 +197,27 @@ Sharon got off with Brad at a club last night by saying "Is it".</li>
   const openButton = document.querySelector('.dialog + button');
   const closeButton = document.querySelector('.dialog button')
 
+  // Handle visual viewport resize (for iOS Safari keyboard)
+  function updateDialogHeight() {
+    if (window.visualViewport) {
+      const height = window.visualViewport.height;
+      dialog.style.height = `${height}px`;
+    }
+  }
+
   openButton.addEventListener('click', () => {
     dialog.style.display = 'block'
+    updateDialogHeight();
   })
 
   closeButton.addEventListener('click', () => {
     dialog.style.display = 'none'
   })
+
+  // Listen for visual viewport changes (keyboard show/hide)
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateDialogHeight);
+  }
 </script>
 </body>
 </html>
